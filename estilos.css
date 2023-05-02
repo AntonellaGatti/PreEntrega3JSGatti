@@ -17,7 +17,8 @@ Gris: rgb(243, 243, 243)
 h1 {
     font-size: 40px;
     text-align: center;
-    margin: 5px;
+    margin: 15px;
+    padding: 15px;
 }
 
 h3 {
@@ -31,6 +32,9 @@ p {
     margin: 5px;
 }
 
+body {
+    height: max-content;
+}
 
 
 
@@ -38,7 +42,7 @@ p {
     background: rgb(89, 0, 4);
     background: linear-gradient(350deg, rgba(89, 0, 4, 1) 0%, rgba(119, 3, 5, 1) 100%);
     width: 100vw;
-    height: 10vh
+    height: 12vh
 }
 
 .navbar-collapse {
@@ -90,15 +94,15 @@ p {
         "tablaCotizacion";
     position: relative;    
     top: 90px;    
-    min-height: fit-content;
+    grid-auto-rows: minmax(100px, auto)
 }
 
 .bannerHero {
     grid-area: bannerHero;
     background-color: aqua;
     position: relative;
+    height: max-content;
     
-
 }
 
 .servicios {
@@ -106,12 +110,14 @@ p {
     text-align: center;
     padding: 10px;
     height: min-content;
+
 }
 
 .formularioCotizacion {
     grid-area: formularioCotizacion;
     padding: 20px;
     margin: 20px;
+    
 
 }
 
@@ -129,7 +135,7 @@ p {
 /* TERMINA CSS GRILLA */
 
 .imgBanner {
-    height: 50px;
+    height: 250px;
 }
 
 
