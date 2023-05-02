@@ -36,6 +36,9 @@ body {
     height: max-content;
 }
 
+header {
+    height: 20px;
+}
 
 
 .navbar {
@@ -99,8 +102,8 @@ body {
 
 .bannerHero {
     grid-area: bannerHero;
-    background-color: aqua;
-    position: relative;
+    position: absolute;
+    top: 20px;
     height: max-content;
     
 }
@@ -110,19 +113,25 @@ body {
     text-align: center;
     padding: 10px;
     height: min-content;
+    
+}
 
+.light {
+    color: white;
 }
 
 .formularioCotizacion {
     grid-area: formularioCotizacion;
     padding: 20px;
     margin: 20px;
+    height: auto;
     
 
 }
 
 .tablaCotizacion {
     grid-area: tablaCotizacion;
+    height: 500px;
 }
 
 .formulario {   

@@ -44,16 +44,16 @@
 
 
         <div class=>
-            <div class="bannerHero">
+            <!-- <div class="bannerHero">
 
                 <h1>Cotizador de Transporte de Carga Terrestre</h1>
-                <h3>Brindanos los datos y te ayudamos a evaluar los costos para tu transporte de carga terrestre</h3>
-                <img src="img/seguimiento.png" class="imgBanner">
+                <h3>Brindanos los datos y te ayudamos a evaluar los costos para tu transporte de carga terrestre</h3> -->
+                <!-- <img src="img/seguimiento.png" class="imgBanner"> -->
 
             </div>
             <div class="servicios">
-                <h3>Acerca de Nosotros</h3>
-                <p>Somos un equipo que creó una aplicación móvil que buscar poder facilitar y agilizar las
+                <h3 class="light">Acerca de Nosotros</h3>
+                <p class="light">Somos un equipo que creó una aplicación móvil que buscar poder facilitar y agilizar las
                     cotizaciones de vehículos de carga en cualquier lugar del país. Tenemos como fin la creación de
                     una
                     comunidad de empresas transportadoras y dadores de carga, en la que puedan compartir una base de
@@ -63,8 +63,8 @@
                 </p>
             </div>
             <div class="formularioCotizacion">
-                <h2>Comencemos con la Cotización!</h2>
-                <p>Dejamos debajo los formularios para que puedas detallarnos la información de la mercaderîa para poder
+                <h2 class="text-center fw-bolder">Comencemos con la Cotización!</h2>
+                <p class="text-center">Dejamos debajo los formularios para que puedas detallarnos la información de la mercaderîa para poder
                     brindarte una cotización más precisa</p>
                 <form id="formularioCoti">
                     <fieldset class="datosItem row formulario">
@@ -104,6 +104,8 @@
                                     <input type="text" name="Alto" class="form-control" placeholder="Ingresar Alto"
                                         id="alto">
                                 </div>
+                                <!-- VALIDAR LOS DATOS DEL FORMULARIO -->
+                                <div id="respuesta"> </div>
                             </div>
                         </div>
                     </fieldset>
@@ -118,20 +120,21 @@
                             <div class="col-md-5">
                                 <label for="precioTransporte" class="form-label">Precio Tranporte</label>
                                 <input type="text" name="precioTransporte" class="form-control"
-                                    placeholder="Ingresar precioTransporte" id="precioTransporte">
+                                    placeholder="Ingresar precio Transporte" id="precioTransporte">
                             </div>
                         </div>
                     </fieldset>
                     <button type="button" class="boton col-5 text-center" id="btnSubmit">COTIZAR!</button>
                 </form>
             </div>
-            <button id="btnCargar">Cargar un item</button>
-            <button id="borrarItem">Borrar un item</button>
-            <button id="vaciarCotizacion">Vaciar Cotizacion</button>
-            <button id="sweetalert">sweetalert2</button>
-
+            
             <div class="tablaCotizacion">
 
+                <h2 class="text-center fw-bolder">Detalles de cotización solicitada</h2>
+                <button id="btnCargar" class="boton">Cargar un item</button>
+            <button id="borrarItem" class="boton">Borrar un item</button>
+            <button id="vaciarCotizacion" class="boton">Vaciar Cotizacion</button>
+        
 
                 <table class="table">
                     <thead>

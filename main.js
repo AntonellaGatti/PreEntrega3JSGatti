@@ -1,11 +1,11 @@
 let carrito = []
 
 let btnCrear = document.getElementById("btnCargar");
-btnCrear.addEventListener("click",cargarUnItem);
+btnCrear.addEventListener("click", cargarUnItem);
 
 
 let btnSubmit = document.getElementById("btnSubmit");
-btnSubmit.addEventListener("click",cargarUnItem);
+btnSubmit.addEventListener("click", cargarUnItem);
 
 //CARGAR CARRITO CON INFO ANTERIOR DEL JSON
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     mostrarCotizacion();
 });
+
 
 //FUNCION PARA CARGAR ITEMS
 function cargarUnItem() {
@@ -32,7 +33,7 @@ function cargarUnItem() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
     mostrarCotizacion();
     formularioCoti.reset();
-    
+
 }
 
 // TRAER AL FORMULARIO PARA LUEGO LLAMAR Y BORRAR LOS DATOS 
@@ -64,7 +65,7 @@ function mostrarCotizacion() {
                 <td>${totalCarrito += item.cbm * item.cantidadKm * item.precioTransporte}</td>
             </tr>
         `
-        
+
         counter++;
     });
 
@@ -75,26 +76,55 @@ function mostrarCotizacion() {
 let btnBuscarYBorrar = document.getElementById("borrarItem");
 btnBuscarYBorrar.addEventListener("click", buscarYBorrarItem);
 function buscarYBorrarItem() {
-    const itemABuscar = prompt("Ingrese el tipo de Embalaje a buscar en el carrito");
-    let indiceAEliminar = -1;
-    carrito.forEach((item, index) => {
-        if (item.tipoDeEmbalaje === itemABuscar) {
-            indiceAEliminar = index;
-        }
-    });
 
-    if (indiceAEliminar > -1) {
-        carrito.splice(indiceAEliminar, 1);
-        alert(`Se eliminó el elemento con tipo de embalaje "${itemABuscar}" del carrito`);
-    } else {
-        alert(`No se encontró ningún elemento con tipo de embalaje "${itemABuscar}" en el carrito`);
-    };
 
-    console.log(carrito)
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    mostrarCotizacion();
+    Swal.fire(
+        {
+            title: "ITEM A BORRAR",
+            text: "Por favor ingrese el item que desea elimianar",
+            input: "text",
+            confirmButtonText: "Siguiente",
+            showCancelButton: true,
+            cancelButtonText: "Cancelar",
+        }).then((resultado) => {
+            let itemABuscar = resultado.value;
+            console.log(itemABuscar)
+            let indiceAEliminar = -1;
 
-}
+            carrito.forEach((item, index) => {
+                if (item.tipoDeEmbalaje === itemABuscar) {
+                    indiceAEliminar = index;
+                }
+            });
+
+
+            if (indiceAEliminar > -1) {
+                carrito.splice(indiceAEliminar, 1);
+                Swal.fire(
+                    {
+                        title: "Item eliminado con exito de la cotizacion!",
+                        text: `Se eliminó el elemento con tipo de embalaje "${itemABuscar}" del carrito`,
+                        icon: "success",
+                    }).then(() => {
+                        console.log(carrito)
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+                        mostrarCotizacion();
+                    });
+            }
+            else {
+                Swal.fire(
+                    {
+                        title: "Atención!",
+                        text: `No se encontró ningún elemento con tipo de embalaje "${itemABuscar}" en el carrito`,
+                        icon: "warning",
+                    });
+            }
+        });
+};
+
+
+
+
 
 // FUNCION PARA VACIAR EL CARRITO Y ELIMINAR EL LOCAL STORAGE, LUEGO MOSTRAR EN LA TABLA
 let btnVaciarCotizacion = document.getElementById("vaciarCotizacion");
@@ -103,7 +133,11 @@ btnVaciarCotizacion.addEventListener("click", vaciarCotizacion);
 function vaciarCotizacion() {
     carrito = []
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    alert("El carrito ha sido vaciado!")
+    Swal.fire(
+        {
+            title: "Usted ha borrado la cotizacion!",
+            icon: "success",
+        });
     mostrarCotizacion();
 }
 
