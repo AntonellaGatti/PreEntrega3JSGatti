@@ -1,7 +1,6 @@
 let carrito = []
 
-let btnCrear = document.getElementById("btnCargar");
-btnCrear.addEventListener("click", cargarUnItem);
+
 
 
 let btnSubmit = document.getElementById("btnSubmit");
