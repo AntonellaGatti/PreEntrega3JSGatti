@@ -85,7 +85,14 @@ function buscarYBorrarItem() {
             confirmButtonText: "Siguiente",
             showCancelButton: true,
             cancelButtonText: "Cancelar",
-        }).then((resultado) => {
+        })
+
+        .then((resultado) => {
+            if (resultado.dismiss === Swal.DismissReason.cancel) {
+                console.log("El usuario cierra el swall sin borrar nada");
+                return;
+            }
+        
             let itemABuscar = resultado.value;
             console.log(itemABuscar)
             let indiceAEliminar = -1;
@@ -118,7 +125,8 @@ function buscarYBorrarItem() {
                         icon: "warning",
                     });
             }
-        });
+    
+});
 };
 
 
