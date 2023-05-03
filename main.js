@@ -1,8 +1,6 @@
 let carrito = []
 
 
-
-
 let btnSubmit = document.getElementById("btnSubmit");
 btnSubmit.addEventListener("click", cargarUnItem);
 
@@ -26,7 +24,25 @@ function cargarUnItem() {
     nuevoItem.alto = document.getElementById("alto").value;
     nuevoItem.cbm = nuevoItem.largo * nuevoItem.ancho * nuevoItem.alto;
     nuevoItem.cantidadKm = document.getElementById("cantidadKm").value;
-    nuevoItem.precioTransporte = document.getElementById("precioTransporte").value;
+
+    // FUNCION PARA DETERMINAR EL PRECIO DEL TRANSPORTE EN BASE A LOS KM
+        let rangoPrecio = () => {
+            if (nuevoItem.cantidadKm > 0 && nuevoItem.cantidadKm <= 500) {
+                precioTransporte = parseFloat(10)
+            } else if (nuevoItem.cantidadKm > 500 && nuevoItem.cantidadKm <= 1500) {
+                precioTransporte = parseFloat(15)
+            } else { precioTransporte = parseFloat(20) }
+            console.log(precioTransporte);
+            return precioTransporte;
+        };
+    nuevoItem.precioTransporte = rangoPrecio() * nuevoItem.cbm * nuevoItem.cantidadKm;
+
+    // MOSTRAR RESULTADO DE RANGO PRECIO EN HTML
+        document.getElementById("cantidadKm").addEventListener("input", () => {
+            document.getElementById("precioTransporte").innerHTML = `${precioTransporte} USD`;
+        });
+
+
     carrito.push(nuevoItem);
     console.log(carrito)
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -37,8 +53,6 @@ function cargarUnItem() {
 
 // TRAER AL FORMULARIO PARA LUEGO LLAMAR Y BORRAR LOS DATOS 
 const formularioCoti = document.getElementById("formularioCoti");
-
-
 
 
 // FUNCION PARA MOSTRAR LA COTIZACION EN TABLA
@@ -54,29 +68,28 @@ function mostrarCotizacion() {
             <tr>
                 <th scope="row">${counter}</th>
                 <td>${item.tipoDeEmbalaje}</td>
-                <td>${item.cantidadDeUnidades}</td>
+                <td>${item.cantidadDeUnidades} u.</td>
                 <td>${item.largo} m</td>
                 <td>${item.ancho} m</td>
                 <td>${item.alto} m</td>
                 <td>${item.cbm} cbm</td>
                 <td>${item.cantidadKm} Km</td>
-                <td>${item.cbm * item.cantidadKm * item.precioTransporte} USD</td>
-                <td>${totalCarrito += item.cbm * item.cantidadKm * item.precioTransporte}</td>
+                <td>${item.precioTransporte} USD</td>
+                <td>${totalCarrito += item.precioTransporte} USD</td>
             </tr>
         `
 
         counter++;
     });
 
-}
+};
 
 
 // FUNCION PARA BUSCAR UN ITEM EN EL ARRAY Y ELIMINARLO
 let btnBuscarYBorrar = document.getElementById("borrarItem");
 btnBuscarYBorrar.addEventListener("click", buscarYBorrarItem);
+
 function buscarYBorrarItem() {
-
-
     Swal.fire(
         {
             title: "ITEM A BORRAR",
@@ -92,7 +105,7 @@ function buscarYBorrarItem() {
                 console.log("El usuario cierra el swall sin borrar nada");
                 return;
             }
-        
+
             let itemABuscar = resultado.value;
             console.log(itemABuscar)
             let indiceAEliminar = -1;
@@ -125,8 +138,8 @@ function buscarYBorrarItem() {
                         icon: "warning",
                     });
             }
-    
-});
+
+        });
 };
 
 
@@ -147,21 +160,3 @@ function vaciarCotizacion() {
         });
     mostrarCotizacion();
 }
-
-// BOTON SWEETALERT
-let btnSweetAlert = document.getElementById("sweetalert");
-
-btnSweetAlert.onclick = () => {
-    Swal.fire(
-        {
-            title: "TIPO DE EMBALAJE",
-            Text: "Por favor ingrese tipo de embalaje",
-            input: "text",
-            confirmButtonText: "Siguiente",
-            showCancelButton: true,
-            cancelButtonText: "Cancelar",
-        }).then((resultado) => {
-
-        })
-
-};
