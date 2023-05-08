@@ -32,7 +32,7 @@
                         <li class="nav-item nav-item-activo">
                             <a class="nav-link" href="index.html" class="header__listaMenu--activo ">Inicio</a>
                         </li>
-                       
+
                     </ul>
                 </div>
             </div>
@@ -46,119 +46,125 @@
 
                 <h1>Cotizador de Transporte de Carga Terrestre</h1>
                 <h3>Brindanos los datos y te ayudamos a evaluar los costos para tu transporte de carga terrestre</h3> -->
-                <!-- <img src="img/seguimiento.png" class="imgBanner"> -->
+            <!-- <img src="img/seguimiento.png" class="imgBanner"> -->
 
-            </div>
-            <div class="servicios">
-                <h3 class="light">Acerca de Nosotros</h3>
-                <p class="light">Somos un equipo que creó una aplicación móvil que buscar poder facilitar y agilizar las
-                    cotizaciones de vehículos de carga en cualquier lugar del país. Tenemos como fin la creación de
-                    una
-                    comunidad de empresas transportadoras y dadores de carga, en la que puedan compartir una base de
-                    información
-                    disminuyendo los viajes realizados en vacío y brindando más ofertas de fletes a los dadores de
-                    carga.
-                </p>
-            </div>
-            <div class="formularioCotizacion">
-                <h2 class="text-center fw-bolder">Comencemos con la Cotización!</h2>
-                <p class="text-center">Dejamos debajo los formularios para que puedas detallarnos la información de la mercadería y así poder
-                    brindarte una cotización más precisa</p>
-                <form id="formularioCoti">
-                    <fieldset class="datosItem row formulario">
-                        <label for="datosCarga" class="form-label text-center fs-3">Datos de la Carga</label>
-                        <div name="datosCarga">
-                            <div class="col-md-5">
-                                <label for="Embalaje" class="col container form-label">Tipo de Embalaje</label>
-                                <select name="Embalaje" class="form-select col-md-5 container-md">
-                                    aria-label="Default select example">
-                                    <option selected>Por favor seleecione un tipo de Embalaje</option>
-                                    <option value="CAJA">CAJA</option>
-                                    <option value="PALLET">PALLET</option>
-                                    <option value="TAMBOR">TAMBOR</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="cantidadU" class="form-label">Cantidad de Unidades</label>
-                                <input type="text" name="cantidadU"
-                                    class="form-control col-lg-6 container formulario__tex"
-                                    placeholder="Por favor ingresar Cantidad de Unidades" id="cantidadU">
-                            </div>
-
-                            <!-- <label for="medidas" class="form-label">Medidas del Embalaje</label> -->
-                            <div name="medidas" class="row">
-                                <div class="col">
-                                    <label for="Largo" class="form-label">Largo</label>
-                                    <input type="text" name="Largo" class="form-control" placeholder="Ingresar Largo"
-                                        id="largo">
-                                </div>
-                                <div class="col">
-                                    <label for="Ancho" class="form-label">Ancho</label>
-                                    <input type="text" name="Ancho" class="form-control" placeholder="Ingresar Ancho"
-                                        id="ancho">
-                                </div>
-                                <div class="col">
-                                    <label for="Alto" class="form-label">Alto</label>
-                                    <input type="text" name="Alto" class="form-control" placeholder="Ingresar Alto"
-                                        id="alto">
-                                </div>
-                                <!-- VALIDAR LOS DATOS DEL FORMULARIO -->
-                                <span id="respuesta"> </span>
-                            </div>
+        </div>
+        <div class="servicios">
+            <h3 class="light">Acerca de Nosotros</h3>
+            <p class="light">Somos un equipo que creó una aplicación móvil que buscar poder facilitar y agilizar las
+                cotizaciones de vehículos de carga en cualquier lugar del país. Tenemos como fin la creación de
+                una
+                comunidad de empresas transportadoras y dadores de carga, en la que puedan compartir una base de
+                información
+                disminuyendo los viajes realizados en vacío y brindando más ofertas de fletes a los dadores de
+                carga.
+            </p>
+        </div>
+        <div class="formularioCotizacion">
+            <h2 class="text-center fw-bolder">Comencemos con la Cotización!</h2>
+            <p class="text-center">Dejamos debajo los formularios para que puedas detallarnos la información de la
+                mercadería y así poder
+                brindarte una cotización más precisa</p>
+            <form id="formularioCoti">
+                <fieldset class="datosItem row formulario">
+                    <label for="datosCarga" class="form-label text-center fs-3">Datos de la Carga</label>
+                    <div name="datosCarga">
+                        <div class="col-md-5">
+                            <label for="Embalaje" class="col container form-label">Tipo de Embalaje</label>
+                            <select name="Embalaje" class="form-select col-md-5 container-md">
+                                aria-label="Default select example">
+                                <option selected>Por favor seleccione un tipo de Embalaje</option>
+                                <option value="CAJA">CAJA</option>
+                                <option value="PALLET">PALLET</option>
+                                <option value="TAMBOR">TAMBOR</option>
+                            </select>
                         </div>
-                    </fieldset>
-                    <fieldset class="datosItem row formulario">
-                        <label for="datosViaje" class="form-label text-center fs-3">Datos del Viaje</label>
-                        <div name="datosViaje" class="row">
-                            <div class="col-md-5">
-                                <label for="cantidadDeKm" class="form-label">Cantidad de Kilometros</label>
-                                <input type="text" name="cantidadDeKm" class="form-control"
-                                    placeholder="Ingresar Cantidad de Kilometros" id="cantidadKm">
-                            </div>
-                            <div class="col-md-5">
-                                <label for="precioTransporte" class="form-label">Precio Transporte</label>
-                                <input type="text" name="precioTransporte" class="form-control"
-                                    placeholder="Ingresar precio Transporte" id="precioTransporte">
-                            </div>
+                        <div class="col-md-6">
+                            <label for="cantidadU" class="form-label">Cantidad de Unidades</label>
+                            <input type="text" name="cantidadU" class="form-control col-lg-6 container formulario__tex"
+                                placeholder="Por favor ingresar Cantidad de Unidades" id="cantidadU"
+                                onblur="validarCampo('cantidadU','respuestaCantU')">
+                                <span id="respuestaCantU"></span>
                         </div>
-                    </fieldset>
-                    <button type="button" class="boton col-5 text-center" id="btnSubmit">COTIZAR!</button>
-                </form>
-            </div>
-            
-            <div class="tablaCotizacion">
 
-                <h2 class="text-center fw-bolder">Detalles de la cotización solicitada</h2>
-             
+                        <!-- <label for="medidas" class="form-label">Medidas del Embalaje</label> -->
+                        <div name="medidas" class="row">
+                            <div class="col">
+                                <label for="Largo" class="form-label">Largo</label>
+                                <input type="text" name="Largo" class="form-control" placeholder="Ingresar Largo"
+                                    id="largo" onblur="validarCampo('largo','respuestaLargo')">
+                                    <span id="respuestaLargo"></span>
+                            </div>
+                            <div class="col">
+                                <label for="Ancho" class="form-label">Ancho</label>
+                                <input type="text" name="Ancho" class="form-control" placeholder="Ingresar Ancho"
+                                    id="ancho" onblur="validarCampo('ancho','respuestaAncho')">
+                                    <span id="respuestaAncho"></span>
+                            </div>
+                            <div class="col">
+                                <label for="Alto" class="form-label">Alto</label>
+                                <input type="text" name="Alto" class="form-control" placeholder="Ingresar Alto"
+                                    id="alto" onblur="validarCampo('alto','respuestaAlto')">
+                                    <span id="respuestaAlto"></span>
+                            </div>
+                            <!-- VALIDAR LOS DATOS DEL FORMULARIO -->
+                    
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="datosItem row formulario">
+                    <label for="datosViaje" class="form-label text-center fs-3">Datos del Viaje</label>
+                    <div name="datosViaje" class="row">
+                        <div class="col-md-5">
+                            <label for="cantidadDeKm" class="form-label">Cantidad de Kilometros</label>
+                            <input type="text" name="cantidadDeKm" class="form-control"
+                                placeholder="Ingresar Cantidad de Kilometros" id="cantidadKm"
+                                onblur="validarCampo('cantidadKm','respuestaKm')">
+                                <span id="respuestaKm"></span>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="precioTransporte" class="form-label">Precio Tranporte</label>
+                            <span id="rangoPrecio"></span>
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit" class="boton col-5 text-center" id="btnSubmit" >COTIZAR!</button>
+            </form>
+        </div>
+
+        <div class="tablaCotizacion">
+
+            <h2 class="text-center fw-bolder">Detalles de la cotización solicitada</h2>
+
             <button id="borrarItem" class="boton">Borrar un item</button>
             <button id="vaciarCotizacion" class="boton">Vaciar Cotizacion</button>
-        
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Tipo de Embalaje</th>
-                            <th scope="col">Cantidad de Unidades</th>
-                            <th scope="col">Largo</th>
-                            <th scope="col">Ancho</th>
-                            <th scope="col">Alto</th>
-                            <th scope="col">Cbm</th>
-                            <th scope="col">Cantidad de Km</th>
-                            <th scope="col">Precio x Carga</th>
-                            <th scope="col">Total Cotizacion</th>
-                        </tr>
-                    </thead>
-                    <tbody id="items">
-                        <!-- SE ARGEGAR TABLA CON DATOS MEDIANTE JS -->
-                    </tbody>
-                </table>
-            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tipo de Embalaje</th>
+                        <th scope="col">Cantidad de Unidades</th>
+                        <th scope="col">Largo</th>
+                        <th scope="col">Ancho</th>
+                        <th scope="col">Alto</th>
+                        <th scope="col">Cbm</th>
+                        <th scope="col">Cantidad de Km</th>
+                        <th scope="col">Precio x Carga</th>
+                        <th scope="col">Total Cotizacion</th>
+                    </tr>
+                </thead>
+                <tbody id="items">
+                    <!-- SE ARGEGAR TABLA CON DATOS MEDIANTE JS -->
+                </tbody>
+            </table>
+        </div>
         </div>
 
 
     </main>
-<footer></footer>
+    <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
         </script>
