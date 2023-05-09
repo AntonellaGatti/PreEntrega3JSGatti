@@ -32,23 +32,16 @@
                         <li class="nav-item nav-item-activo">
                             <a class="nav-link" href="index.html" class="header__listaMenu--activo ">Inicio</a>
                         </li>
+                        <li class="nav-item nav-item-activo">
+                            <a class="nav-link" href="./pages/contacto.html" class="header__listaMenu">Contacto</a>
+                        </li>
 
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
     <main class="main-index">
 
-
-        <div class=>
-            <!-- <div class="bannerHero">
-
-                <h1>Cotizador de Transporte de Carga Terrestre</h1>
-                <h3>Brindanos los datos y te ayudamos a evaluar los costos para tu transporte de carga terrestre</h3> -->
-            <!-- <img src="img/seguimiento.png" class="imgBanner"> -->
-
-        </div>
         <div class="servicios">
             <h3 class="light">Acerca de Nosotros</h3>
             <p class="light">Somos un equipo que creó una aplicación móvil que buscar poder facilitar y agilizar las
@@ -66,6 +59,20 @@
                 mercadería y así poder
                 brindarte una cotización más precisa</p>
             <form id="formularioCoti">
+                <fieldset class="datosItem row formulario">
+                    <label for="infoEmpresa" class="form-label text-center fs-3">Datos de la Empresa</label>
+                    <div name="infoEmpresa" class="row">
+                        <div class="col-md">
+                            <label for="inputCuit" class="form-label">CUIT</label>
+                            <input type="text" name="inputCuit" class="form-control"
+                                placeholder="Ingresar CUIT de la Empresa" id="inputCuit">
+                        <div class="col-md">
+                            <label for="razonSocial" class="form-label">Razon Social</label>
+                            <input type="text" name="razonSocial" id="razonSocial" readonly class="form-control col-lg container-fluid">
+                        </div>
+                    </div>
+                </fieldset>
+                
                 <fieldset class="datosItem row formulario">
                     <label for="datosCarga" class="form-label text-center fs-3">Datos de la Carga</label>
                     <div name="datosCarga">
@@ -124,7 +131,7 @@
                         </div>
                         <div class="col-md-5">
                             <label for="precioTransporte" class="form-label">Precio Tranporte</label>
-                            <span id="rangoPrecio"></span>
+                            <span id="rangoPrecio" class=""></span>
                         </div>
                     </div>
                 </fieldset>
@@ -175,6 +182,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="itemCarga.js"></script>
     <script src="main.js"></script>
+    <script src="contribuyentes.js"></script>
 </body>
 
 </html>

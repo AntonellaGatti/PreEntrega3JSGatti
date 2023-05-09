@@ -75,7 +75,7 @@ header {
 
 .nav-item-activo {
     background-color: blanchedalmond;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
 }
 
@@ -189,3 +189,52 @@ label {
     font-weight: bold;
 }
 
+.main-contacto {
+    height: 2000px;
+
+}
+
+.preguntas-frecuentes {
+    margin: 20px;
+    padding: 20px;
+   text-align: center;
+   position: relative;
+   top: 100px;
+
+}
+
+
+.formulario-preguntas {
+    width: 550px;
+    height: auto;
+    padding: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 3px solid rgb(165, 1, 4);
+    align-content: center;
+   
+}
+
+.formulario__text {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(165, 1, 4);
+    color: rgb(89, 0, 4)
+}
+
+.formulario__textarea--consulta {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(165, 1, 4);
+    color: rgb(89, 0, 4);
+    display: block;
+    text-align: start;
+}

@@ -80,7 +80,10 @@ let validCantU = document.getElementById("cantidadU");
 let validLargo = document.getElementById("largo");
 let validAncho = document.getElementById("ancho");
 let validAlto = document.getElementById("alto");
-let validKM = document.getElementById("cantidadKm")
+let validKM = document.getElementById("cantidadKm");
+let borrarFormulario = document.getElementById("btnBorrarForm");
+
+
 
 formularioCoti.addEventListener("submit", e=> {
     e.preventDefault()
@@ -93,23 +96,23 @@ formularioCoti.addEventListener("submit", e=> {
     }
 
 
-    if (validCantU.value <= 0 ||validCantU.value === ""){
+    if (isNaN(validCantU.value) || validCantU.value <= 0 ||validCantU.value === ""){
         mensajeError.push(`la Cantidad de Unidades`),
         error = true;
     };
-    if (validLargo.value <= 0 ||validLargo.value === ""){
+    if (isNaN(validLargo.value) || validLargo.value <= 0 ||validLargo.value === ""){
         mensajeError.push(`el Largo`),
         error = true;
     };
-    if (validAncho.value <= 0 ||validAncho.value === ""){
+    if (isNaN(validAncho.value) || validAncho.value <= 0 ||validAncho.value === ""){
         mensajeError.push(`el Ancho`),
         error = true;
     };
-    if (validAlto.value <= 0 ||validAlto.value === ""){
+    if (isNaN(validAlto.value) || validAlto.value <= 0 ||validAlto.value === ""){
         mensajeError.push(`el Alto`),
         error = true;
     };
-    if (validKM.value <= 0 ||validKM.value === ""){
+    if (isNaN(validKM.value) || validKM.value <= 0 ||validKM.value === ""){
         mensajeError.push(`la cantidad de Kilómetros`)
         error = true;
     };
@@ -120,7 +123,6 @@ formularioCoti.addEventListener("submit", e=> {
         formularioCoti.reset();
     } else {
         console.log(" hubo error");
-        formularioCoti.reset();
         Swal.fire(
             {
                 title: "Atención",
