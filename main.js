@@ -177,7 +177,7 @@ function mostrarCotizacion() {
     carrito.forEach((item) => {
         table.innerHTML +=
             `
-            <tr>
+            <tr data-counter="${counter}">
                 <th scope="row">${counter}</th>
                 <td>${item.tipoDeEmbalaje}</td>
                 <td>${item.cantidadDeUnidades} u.</td>
@@ -205,7 +205,7 @@ function buscarYBorrarItem() {
     Swal.fire(
         {
             title: "ITEM A BORRAR",
-            text: "Por favor ingrese el item que desea elimianar",
+            text: "Por favor ingrese el ID del item que desea eliminar",
             input: "text",
             confirmButtonText: "Siguiente",
             showCancelButton: true,
@@ -223,8 +223,8 @@ function buscarYBorrarItem() {
             let indiceAEliminar = -1;
 
             carrito.forEach((item, index) => {
-                if (item.tipoDeEmbalaje === itemABuscar) {
-                    indiceAEliminar = index;
+                if (index + 1 === parseInt(itemABuscar)) {
+                    indiceAEliminar = index 
                 }
             });
 
@@ -234,7 +234,7 @@ function buscarYBorrarItem() {
                 Swal.fire(
                     {
                         title: "Item eliminado con exito de la cotizacion!",
-                        text: `Se eliminó el elemento con tipo de embalaje "${itemABuscar}" del carrito`,
+                        text: `Se eliminó el elemento ID "${itemABuscar}" de la cotización`,
                         icon: "success",
                     }).then(() => {
                         console.log(carrito)
@@ -246,7 +246,7 @@ function buscarYBorrarItem() {
                 Swal.fire(
                     {
                         title: "Atención!",
-                        text: `No se encontró ningún elemento con tipo de embalaje "${itemABuscar}" en el carrito`,
+                        text: `No se encontró ningún elemento con ID "${itemABuscar}" en la cotización`,
                         icon: "warning",
                     });
             }
