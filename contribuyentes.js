@@ -1,3 +1,4 @@
+///// API AFIP - CUIT CONTRIBUYENTES 
 
 async function mostrarContribuyente() {
     const cuit = document.getElementById("inputCuit").value;

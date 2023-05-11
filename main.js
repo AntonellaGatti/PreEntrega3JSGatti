@@ -33,19 +33,19 @@ mostrarRango.addEventListener("input", () => {
 /////// BOTON PRECIO
 document.getElementById("btnPrecios").addEventListener("click", () => {
     Swal.fire({
-      title: "Rango de Precios",
-      html: `
+        title: "Rango de Precios",
+        html: `
         <ul>
           <li>Desde 0 a 500 Km: 5 USD x Km</li>
           <li>Desde 501 y 1500: 10 USD x Km</li>
           <li>Desde 1500 en adelante: 15 USD x Km</li>
         </ul>
       `,
-      icon: "info",
-      position: "top-end"
+        icon: "info",
+        position: "top-end"
     });
-  });
-  
+});
+
 
 //FUNCION PARA CARGAR ITEMS
 function cargarUnItem() {
@@ -167,19 +167,21 @@ validCantU.addEventListener("blur", function () {
 });
 
 validLargo.addEventListener("blur", function () {
-    validarCampo('largo','respuestaLargo')
+    validarCampo('largo', 'respuestaLargo')
 });
 
 validAncho.addEventListener("blur", function () {
-    validarCampo('ancho','respuestaAncho')
+    validarCampo('ancho', 'respuestaAncho')
 });
 
 validAlto.addEventListener("blur", function () {
-    validarCampo('alto','respuestaAlto')});
+    validarCampo('alto', 'respuestaAlto')
+});
 
 validKM.addEventListener("blur", function () {
-        validarCampo('cantidadKm','respuestaKm')});
-        
+    validarCampo('cantidadKm', 'respuestaKm')
+});
+
 
 
 // FUNCION PARA MOSTRAR LA COTIZACION EN TABLA
@@ -239,7 +241,7 @@ function buscarYBorrarItem() {
 
             carrito.forEach((item, index) => {
                 if (index + 1 === parseInt(itemABuscar)) {
-                    indiceAEliminar = index 
+                    indiceAEliminar = index
                 }
             });
 
@@ -277,16 +279,32 @@ function buscarYBorrarItem() {
 let btnVaciarCotizacion = document.getElementById("vaciarCotizacion");
 btnVaciarCotizacion.addEventListener("click", vaciarCotizacion);
 
-function vaciarCotizacion() {
-    carrito = []
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    Swal.fire(
-        {
-            title: "Usted ha borrado la cotizacion!",
-            icon: "success",
-        });
-    mostrarCotizacion();
-};
+// function vaciarCotizacion() {
+//     carrito = []
+//     localStorage.setItem("carrito", JSON.stringify(carrito));
+//     Swal.fire(
+//         {
+//             title: "Usted ha borrado la cotizacion!",
+//             icon: "success",
+//         });
+//     mostrarCotizacion();
+// };
 
+function vaciarCotizacion() {
+    if (carrito.length === 0) {
+      Swal.fire({
+        title: "Atención",
+        text: `La cotización se encuentra sin items cargados. No se puede vaciar.`,
+        icon: "warning",
+      });
+    } else {
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      Swal.fire({
+        title: "Usted ha borrado la cotizacion!",
+        icon: "success",
+      });
+      mostrarCotizacion();
+    }
+  };
 
 
