@@ -298,6 +298,7 @@ function vaciarCotizacion() {
         icon: "warning",
       });
     } else {
+        carrito = [];
       localStorage.setItem("carrito", JSON.stringify(carrito));
       Swal.fire({
         title: "Usted ha borrado la cotizacion!",
