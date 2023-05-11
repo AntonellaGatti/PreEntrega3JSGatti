@@ -171,18 +171,18 @@ legend {
 
 }
 
-.boton-disabled {
+.boton-tabla {
     margin: 15px;
     padding: 3px;
     color: black;
-    background-color: rgba(165, 1, 4, 0.611);
+    background-color: rgba(165, 1, 4, 0.45);
     border-radius: 5px;
     font-weight: bold;
     border-color: rgba(165, 1, 4, 0.725);
     width: auto;
     position: relative;
     top: 10px;
-    opacity: 0.5;
+    opacity: 0.9;
 }
 
 

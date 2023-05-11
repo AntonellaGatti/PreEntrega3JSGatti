@@ -30,7 +30,22 @@ mostrarRango.addEventListener("input", () => {
 });
 
 
-
+/////// BOTON PRECIO
+document.getElementById("btnPrecios").addEventListener("click", () => {
+    Swal.fire({
+      title: "Rango de Precios",
+      html: `
+        <ul>
+          <li>Desde 0 a 500 Km: 5 USD x Km</li>
+          <li>Desde 501 y 1500: 10 USD x Km</li>
+          <li>Desde 1500 en adelante: 15 USD x Km</li>
+        </ul>
+      `,
+      icon: "info",
+      position: "top-end"
+    });
+  });
+  
 
 //FUNCION PARA CARGAR ITEMS
 function cargarUnItem() {
@@ -272,3 +287,6 @@ function vaciarCotizacion() {
         });
     mostrarCotizacion();
 };
+
+
+

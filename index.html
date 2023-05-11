@@ -119,33 +119,32 @@
                 <fieldset class="datosItem row formulario">
                     <label for="datosViaje" class="form-label text-center fs-3">Datos del Viaje</label>
                     <div name="datosViaje" class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-5 mb-3">
                             <label for="cantidadDeKm" class="form-label">Cantidad de Kilometros</label>
                             <input type="text" name="cantidadDeKm" class="form-control"
                                 placeholder="Ingresar Cantidad de Kilometros" id="cantidadKm">
                                 <span id="respuestaKm" class="text-danger"></span>
                         </div>
-                        <div class="col-md-5">
-                            <label for="precioTransporte" class="form-label">Precio Tranporte</label>
+                        <div class="col-md-5 mb-3">
+                            <label for="precioTransporte" class="form-label">Precio Transporte</label>
                             <input type="text" name="precioTransporte" id="rangoPrecio" readonly class="form-control col-lg container-fluid">
                             <span id="rangoPrecio" class=""></span> 
-                            <!-- <button id="btnPrecios" class="btn btn-primary"> Te quedaron dudas de los Precios?</button> -->
-                             
                         </div>
                     </div>
                 </fieldset>
-                <button type="submit" class="boton d-block mx-auto col-5 text-center" id="btnSubmit" >COTIZAR!</button>
+                <button class="boton d-block mx-auto col-5 text-center" id="btnSubmit" >COTIZAR!</button>
             </form>
         </div>
-
+        
         <div class="tablaCotizacion m-3">
-
+            
             <h2 class="text-center fw-bolder">Detalles de la cotización solicitada</h2>
             <h5 id="infoRazonSocial" class="text-center"></h5>
-
+            
             <div class="d-flex justify-content-around">
-            <button id="borrarItem" class="boton col-2 text-center mx-3">Borrar un item</button>
-            <button id="vaciarCotizacion" class="boton col-2 text-center mx-3">Vaciar Cotizacion</button>
+                <button id="borrarItem" class="boton-tabla col-2 text-center mx-3">Borrar un item</button>
+                <button id="vaciarCotizacion" class="boton-tabla col-2 text-center mx-3">Vaciar Cotizacion</button>
+                <button id="btnPrecios" class=" boton-tabla col-2 text-center mx-3"> Te quedaron dudas sobre los Precios?</button>
             </div> 
             <br>
             <br>  

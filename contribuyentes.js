@@ -12,7 +12,6 @@ async function mostrarContribuyente() {
         });
         document.getElementById("inputCuit").value = ""; 
     } else
-        
         try {
             const response = await fetch(url);
             if (!response.ok && response) {
