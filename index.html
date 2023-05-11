@@ -27,12 +27,12 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item nav-item-activo">
                             <a class="nav-link" href="index.html" class="header__listaMenu--activo ">Inicio</a>
                         </li>
-                        <li class="nav-item nav-item-activo">
+                        <li class="nav-item">
                             <a class="nav-link" href="./pages/contacto.html" class="header__listaMenu">Contacto</a>
                         </li>
 
@@ -55,16 +55,16 @@
         </div>
         <div class="formularioCotizacion">
             <h2 class="text-center fw-bolder">Comencemos con la Cotización!</h2>
-            <p class="text-center">Dejamos debajo los formularios para que puedas detallarnos la información de la
+            <h5 class="text-center mb-3">Dejamos debajo los formularios para que puedas detallarnos la información de la
                 mercadería y así poder
-                brindarte una cotización más precisa</p>
+                brindarte una cotización más precisa</h5>
             <form id="formularioCoti">
                 <fieldset class="datosItem row formulario">
                     <label for="infoEmpresa" class="form-label text-center fs-3">Datos de la Empresa</label>
                     <div name="infoEmpresa" class="row">
                         <div class="col-md">
                             <label for="inputCuit" class="form-label">CUIT</label>
-                            <input type="text" name="inputCuit" class="form-control"
+                            <input type="text" name="inputCuit" class="form-control mb-3"
                                 placeholder="Ingresar CUIT de la Empresa" id="inputCuit">
                         <div class="col-md">
                             <label for="razonSocial" class="form-label">Razon Social</label>
@@ -78,7 +78,7 @@
                     <div name="datosCarga">
                         <div class="col-md-5">
                             <label for="Embalaje" class="col container form-label">Tipo de Embalaje</label>
-                            <select name="Embalaje" class="form-select col-md-5 container-md">
+                            <select name="Embalaje" class="form-select col-md-5 container-md mb-3">
                                 aria-label="Default select example">
                                 <option selected>Por favor seleccione un tipo de Embalaje</option>
                                 <option value="CAJA">CAJA</option>
@@ -86,33 +86,32 @@
                                 <option value="TAMBOR">TAMBOR</option>
                             </select>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <label for="cantidadU" class="form-label">Cantidad de Unidades</label>
-                            <input type="text" name="cantidadU" class="form-control col-lg-6 container formulario__tex"
-                                placeholder="Por favor ingresar Cantidad de Unidades" id="cantidadU"
-                                onblur="validarCampo('cantidadU','respuestaCantU')">
-                                <span id="respuestaCantU"></span>
+                            <input type="text" name="cantidadU" class="form-control col-lg-6 container"
+                                placeholder="Por favor ingresar Cantidad de Unidades" id="cantidadU">
+                                <span id="respuestaCantU" class="mb-3 text-danger"></span>
                         </div>
 
                         <!-- <label for="medidas" class="form-label">Medidas del Embalaje</label> -->
                         <div name="medidas" class="row">
                             <div class="col">
-                                <label for="Largo" class="form-label">Largo</label>
+                                <label for="Largo" class="form-label mt-3">Largo</label>
                                 <input type="text" name="Largo" class="form-control" placeholder="Ingresar Largo"
-                                    id="largo" onblur="validarCampo('largo','respuestaLargo')">
-                                    <span id="respuestaLargo"></span>
+                                    id="largo">
+                                    <span id="respuestaLargo"  class="text-danger"></span>
                             </div>
                             <div class="col">
-                                <label for="Ancho" class="form-label">Ancho</label>
+                                <label for="Ancho" class="form-label mt-3">Ancho</label>
                                 <input type="text" name="Ancho" class="form-control" placeholder="Ingresar Ancho"
-                                    id="ancho" onblur="validarCampo('ancho','respuestaAncho')">
-                                    <span id="respuestaAncho"></span>
+                                    id="ancho">
+                                    <span id="respuestaAncho" class="text-danger"></span>
                             </div>
                             <div class="col">
-                                <label for="Alto" class="form-label">Alto</label>
+                                <label for="Alto" class="form-label mt-3">Alto</label>
                                 <input type="text" name="Alto" class="form-control" placeholder="Ingresar Alto"
-                                    id="alto" onblur="validarCampo('alto','respuestaAlto')">
-                                    <span id="respuestaAlto"></span>
+                                    id="alto">
+                                    <span id="respuestaAlto" class="text-danger"></span>
                             </div>
                             <!-- VALIDAR LOS DATOS DEL FORMULARIO -->
                     
@@ -125,27 +124,33 @@
                         <div class="col-md-5">
                             <label for="cantidadDeKm" class="form-label">Cantidad de Kilometros</label>
                             <input type="text" name="cantidadDeKm" class="form-control"
-                                placeholder="Ingresar Cantidad de Kilometros" id="cantidadKm"
-                                onblur="validarCampo('cantidadKm','respuestaKm')">
-                                <span id="respuestaKm"></span>
+                                placeholder="Ingresar Cantidad de Kilometros" id="cantidadKm">
+                                <span id="respuestaKm" class="text-danger"></span>
                         </div>
                         <div class="col-md-5">
                             <label for="precioTransporte" class="form-label">Precio Tranporte</label>
-                            <span id="rangoPrecio" class=""></span>
+                            <input type="text" name="precioTransporte" id="rangoPrecio" readonly class="form-control col-lg container-fluid">
+                            <span id="rangoPrecio" class=""></span> 
+                            <!-- <button id="btnPrecios" class="btn btn-primary"> Te quedaron dudas de los Precios?</button> -->
+                             
                         </div>
                     </div>
                 </fieldset>
-                <button type="submit" class="boton col-5 text-center" id="btnSubmit" >COTIZAR!</button>
+                <button type="submit" class="boton d-block mx-auto col-5 text-center" id="btnSubmit" >COTIZAR!</button>
             </form>
         </div>
 
         <div class="tablaCotizacion">
 
             <h2 class="text-center fw-bolder">Detalles de la cotización solicitada</h2>
+            <h5 id="infoRazonSocial" class="text-center"></h5>
 
-            <button id="borrarItem" class="boton">Borrar un item</button>
-            <button id="vaciarCotizacion" class="boton">Vaciar Cotizacion</button>
-
+            <div class="d-flex justify-content-around">
+            <button id="borrarItem" class="boton col-2 text-center mx-3">Borrar un item</button>
+            <button id="vaciarCotizacion" class="boton col-2 text-center mx-3">Vaciar Cotizacion</button>
+            </div> 
+            <br>
+            <br>  
 
             <table class="table">
                 <thead>
@@ -175,6 +180,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
         </script>
+    
     <!-- SCRIPT SWEAT ALERT -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.3/sweetalert2.min.css"

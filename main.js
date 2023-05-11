@@ -18,16 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
 let mostrarRango = document.getElementById("cantidadKm");
 mostrarRango.addEventListener("input", () => {
     if (parseFloat(mostrarRango.value) > 0 && (parseFloat(mostrarRango.value)) <= 500) {
-        document.getElementById("rangoPrecio").innerHTML = `5 USD`;
-    } else if ((parseFloat(mostrarRango.value)) > 500 && (parseFloat(mostrarRango.value) <=1500)){
-        document.getElementById("rangoPrecio").innerHTML = `10 USD`;
-    } else if (parseFloat(mostrarRango.value) <= 0 || mostrarRango.value == ""){
-        document.getElementById("rangoPrecio").innerHTML = `Sin rango asignado`;
-    }else {
-        document.getElementById("rangoPrecio").innerHTML = `15 USD`;
+        document.getElementById("rangoPrecio").value = `5 USD`;
+    } else if ((parseFloat(mostrarRango.value)) > 500 && (parseFloat(mostrarRango.value) <= 1500)) {
+        document.getElementById("rangoPrecio").value = `10 USD`;
+    } else if (parseFloat(mostrarRango.value) <= 0 || mostrarRango.value == "") {
+        document.getElementById("rangoPrecio").value = `Sin rango asignado`;
+    } else {
+        document.getElementById("rangoPrecio").value = `15 USD`;
     }
-    
+
 });
+
+
 
 
 //FUNCION PARA CARGAR ITEMS
@@ -42,15 +44,15 @@ function cargarUnItem() {
     nuevoItem.cantidadKm = document.getElementById("cantidadKm").value;
 
     // FUNCION PARA DETERMINAR EL PRECIO DEL TRANSPORTE EN BASE A LOS KM
-        let rangoPrecio = () => {
-            if (nuevoItem.cantidadKm > 0 && nuevoItem.cantidadKm <= 500) {
-                precioTransporte = parseFloat(5)
-            } else if (nuevoItem.cantidadKm > 500 && nuevoItem.cantidadKm <= 1500) {
-                precioTransporte = parseFloat(10)
-            } else { precioTransporte = parseFloat(15) }
-            console.log(precioTransporte);
-            return precioTransporte;
-        };
+    let rangoPrecio = () => {
+        if (nuevoItem.cantidadKm > 0 && nuevoItem.cantidadKm <= 500) {
+            precioTransporte = parseFloat(5)
+        } else if (nuevoItem.cantidadKm > 500 && nuevoItem.cantidadKm <= 1500) {
+            precioTransporte = parseFloat(10)
+        } else { precioTransporte = parseFloat(15) }
+        console.log(precioTransporte);
+        return precioTransporte;
+    };
     nuevoItem.precioTransporte = rangoPrecio() * nuevoItem.cbm * nuevoItem.cantidadKm;
 
     carrito.push(nuevoItem);
@@ -64,15 +66,8 @@ function cargarUnItem() {
 // TRAER AL FORMULARIO PARA LUEGO LLAMAR Y BORRAR LOS DATOS 
 const formularioCoti = document.getElementById("formularioCoti");
 
-// FUNCIONES PARA VALIDAR CAMPOS DEL FORMULARIO
-function validarCampo(idInput, idRespuesta) {
-    let validCampo = document.getElementById(idInput).value;
-    if (validCampo <= 0 || validCampo === "") {
-        document.getElementById(idRespuesta).innerHTML = "No puede ser 0 o vacío";
-    } else {
-        document.getElementById(idRespuesta).innerHTML = " ";
-    }
-};
+
+
 
 // VALIDAR FORMULARIO ENTERO
 let validEmbalaje = document.querySelector("#formularioCoti select[name='Embalaje']");
@@ -82,37 +77,41 @@ let validAncho = document.getElementById("ancho");
 let validAlto = document.getElementById("alto");
 let validKM = document.getElementById("cantidadKm");
 let borrarFormulario = document.getElementById("btnBorrarForm");
+let inputcuit = document.getElementById("inputCuit");
 
-
-
-formularioCoti.addEventListener("submit", e=> {
+formularioCoti.addEventListener("submit", e => {
     e.preventDefault()
-    let error = false; 
+    let error = false;
     let mensajeError = []
 
-    if (validEmbalaje.value === "Por favor seleccione un tipo de Embalaje"){
+    if (inputcuit.value === "") {
+        mensajeError.push('CUIT'),
+            error = true;
+    }
+
+    if (validEmbalaje.value === "Por favor seleccione un tipo de Embalaje") {
         mensajeError.push('Tipo de Embalaje'),
-        error = true;
+            error = true;
     }
 
 
-    if (isNaN(validCantU.value) || validCantU.value <= 0 ||validCantU.value === ""){
+    if (isNaN(validCantU.value) || validCantU.value <= 0 || validCantU.value === "") {
         mensajeError.push(`la Cantidad de Unidades`),
-        error = true;
+            error = true;
     };
-    if (isNaN(validLargo.value) || validLargo.value <= 0 ||validLargo.value === ""){
+    if (isNaN(validLargo.value) || validLargo.value <= 0 || validLargo.value === "") {
         mensajeError.push(`el Largo`),
-        error = true;
+            error = true;
     };
-    if (isNaN(validAncho.value) || validAncho.value <= 0 ||validAncho.value === ""){
+    if (isNaN(validAncho.value) || validAncho.value <= 0 || validAncho.value === "") {
         mensajeError.push(`el Ancho`),
-        error = true;
+            error = true;
     };
-    if (isNaN(validAlto.value) || validAlto.value <= 0 ||validAlto.value === ""){
+    if (isNaN(validAlto.value) || validAlto.value <= 0 || validAlto.value === "") {
         mensajeError.push(`el Alto`),
-        error = true;
+            error = true;
     };
-    if (isNaN(validKM.value) || validKM.value <= 0 ||validKM.value === ""){
+    if (isNaN(validKM.value) || validKM.value <= 0 || validKM.value === "") {
         mensajeError.push(`la cantidad de Kilómetros`)
         error = true;
     };
@@ -132,7 +131,40 @@ formularioCoti.addEventListener("submit", e=> {
     }
 });
 
+// FUNCIONES PARA VALIDAR CAMPOS DEL FORMULARIO
+function validarCampo(idInput, idRespuesta) {
+    let validCampo = document.getElementById(idInput).value;
+    if (validCampo <= 0 || validCampo === "") {
+        document.getElementById(idRespuesta).innerHTML = "No puede ser 0 o vacío";
+    } else {
+        document.getElementById(idRespuesta).innerHTML = " ";
+    }
+};
 
+let respuestaCantU = document.getElementById("respuestaCantU");
+let respuestaLargo = document.getElementById("respuestaLargo");
+let respuestaAncho = document.getElementById("respuestaAncho");
+let respuestaAlto = document.getElementById("respuestaAlto");
+let respuestaCantKM = document.getElementById("respuestaKm");
+
+validCantU.addEventListener("blur", function () {
+    validarCampo('cantidadU', 'respuestaCantU')
+});
+
+validLargo.addEventListener("blur", function () {
+    validarCampo('largo','respuestaLargo')
+});
+
+validAncho.addEventListener("blur", function () {
+    validarCampo('ancho','respuestaAncho')
+});
+
+validAlto.addEventListener("blur", function () {
+    validarCampo('alto','respuestaAlto')});
+
+validKM.addEventListener("blur", function () {
+        validarCampo('cantidadKm','respuestaKm')});
+        
 
 
 // FUNCION PARA MOSTRAR LA COTIZACION EN TABLA

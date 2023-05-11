@@ -49,7 +49,7 @@ header {
 }
 
 .navbar-collapse {
-    background: rgb(89, 0, 4);
+    background: blanchedalmond;
     background: linear-gradient(350deg, rgba(89, 0, 4, 1) 0%, rgba(119, 3, 5, 1) 100%);
     border-radius: 5px;
     width: 100vw;
@@ -70,6 +70,7 @@ header {
     color: rgb(165, 1, 4);
     font-weight: bold;
     text-decoration: none;
+    padding-right: 10px;
 
 }
 
@@ -132,6 +133,7 @@ header {
 .tablaCotizacion {
     grid-area: tablaCotizacion;
     height: 500px;
+    margin-top: 80px;
 }
 
 .formulario {   
@@ -187,6 +189,7 @@ legend {
 label {
     color: rgb(89, 0, 4);
     font-weight: bold;
+    font-size:larger
 }
 
 .main-contacto {
